@@ -4,12 +4,15 @@
   "description": "This is notyeninja learning react!",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint  \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1"
   },
   "dependencies": {
