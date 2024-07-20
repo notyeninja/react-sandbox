@@ -1,9 +1,17 @@
 const Pet = (props) => {
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <h2>{props.animal}</h2>
-      <h2>{props.breed}</h2>
+    <div
+      className="card"
+      style={{
+        width: "18rem",
+      }}
+    >
+      <div className="card-body">
+        <div className="card-title">{props.name}</div>
+        <div className="card-subtitle text-body-secondary">
+          {props.animal} - {props.breed}
+        </div>
+      </div>
     </div>
   );
 };
