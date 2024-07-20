@@ -26,62 +26,68 @@ const SearchPet = () => {
 
   return (
     <div className="container">
-      <form action="">
-        <label htmlFor="location" className="form-label">
-          Location
-        </label>
-        <input
-          id="location"
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          className="form-control"
-        />
+      <div className="row">
+        <div className="col-4">
+          <form action="">
+            <label htmlFor="location" className="form-label">
+              Location
+            </label>
+            <input
+              id="location"
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className="form-control"
+            />
 
-        <label htmlFor="animal" className="form-label">
-          Animal
-        </label>
-        <select
-          className="form-control"
-          name="animal"
-          id="animal"
-          value={animal}
-          onChange={(e) => setAnimal(e.target.value)}
-        >
-          <option />
-          {ANIMALS.map((animal) => (
-            <option key={animal}>{animal}</option>
+            <label htmlFor="animal" className="form-label">
+              Animal
+            </label>
+            <select
+              className="form-control"
+              name="animal"
+              id="animal"
+              value={animal}
+              onChange={(e) => setAnimal(e.target.value)}
+            >
+              <option />
+              {ANIMALS.map((animal) => (
+                <option key={animal}>{animal}</option>
+              ))}
+            </select>
+
+            <label htmlFor="breeds" className="form-label">
+              Breeds
+            </label>
+            <select
+              className="form-control"
+              name="breeds"
+              id="breeds"
+              value={breed}
+              onChange={(e) => setBreed(e.target.value)}
+            >
+              <option />
+              {breeds.map((breed) => (
+                <option key={breed}>{breed}</option>
+              ))}
+            </select>
+
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
+          </form>
+        </div>
+        <div className="col">
+          {pets.map((pet) => (
+            <Pet
+              name={pet.name}
+              breed={pet.breed}
+              animal={pet.animal}
+              key={pet.id}
+            ></Pet>
           ))}
-        </select>
-
-        <label htmlFor="breeds" className="form-label">
-          Breeds
-        </label>
-        <select
-          className="form-control"
-          name="breeds"
-          id="breeds"
-          value={breed}
-          onChange={(e) => setBreed(e.target.value)}
-        >
-          <option />
-          {breeds.map((breed) => (
-            <option key={breed}>{breed}</option>
-          ))}
-        </select>
-
-        <button type="submit" className="btn btn-primary">
-          Search
-        </button>
-      </form>
-      {pets.map((pet) => (
-        <Pet
-          name={pet.name}
-          breed={pet.breed}
-          animal={pet.animal}
-          key={pet.id}
-        ></Pet>
-      ))}
+        </div>
+      </div>
     </div>
   );
 };
