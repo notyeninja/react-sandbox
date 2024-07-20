@@ -7,15 +7,19 @@ const SearchPet = () => {
   const [location, setLocation] = useState("Seattle, WA");
   const [animal, setAnimal] = useState("");
   const [pets, setPets] = useState([]);
+  const breed = "";
 
   useEffect(() => {
     requestPets();
   }, []);
 
   async function requestPets() {
-    const res = await fetch(`http://localhost:3000/pets`);
+    //const res = await fetch(`http://localhost:3000/pets`);
+    const res = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+    );
     const json = await res.json();
-    setPets(json);
+    setPets(json.pets);
   }
 
   return (
