@@ -13,10 +13,9 @@ const Pet = (props) => {
         <p className="card-subtitle text-body-secondary">
           {props.animal} - {props.breed}
         </p>
-
-        <a href={`/details/${props.id}`} className="btn btn-primary">
-          Deails
-        </a>
+        <Link to={`/details/${props.id}`} className="btn btn-primary">
+          Details
+        </Link>
       </div>
     </div>
   );
