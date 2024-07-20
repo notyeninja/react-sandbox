@@ -28,7 +28,12 @@ const SearchPet = () => {
     <div className="container">
       <div className="row">
         <div className="col-4">
-          <form action="">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              requestPets();
+            }}
+          >
             <label htmlFor="location" className="form-label">
               Location
             </label>
