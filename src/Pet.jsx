@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Pet = (props) => {
   return (
     <div
@@ -7,10 +9,14 @@ const Pet = (props) => {
       }}
     >
       <div className="card-body">
-        <div className="card-title">{props.name}</div>
-        <div className="card-subtitle text-body-secondary">
+        <h3 className="card-title">{props.name}</h3>
+        <p className="card-subtitle text-body-secondary">
           {props.animal} - {props.breed}
-        </div>
+        </p>
+
+        <a href={`/details/${props.id}`} className="btn btn-primary">
+          Deails
+        </a>
       </div>
     </div>
   );

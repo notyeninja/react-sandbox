@@ -11,6 +11,7 @@ const PetSearchResult = ({ pets }) => {
             name={pet.name}
             animal={pet.animal}
             breed={pet.breed}
+            id={pet.id}
             key={pet.id}
           />
         ))
